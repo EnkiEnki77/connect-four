@@ -8,7 +8,7 @@ import playVsPlayer from "../public/assets/player-vs-player.svg";
 const Home: NextPage = () => {
   const cunt = "3";
   return (
-    <div className="min-h-screen bg-purple px-5">
+    <div className="min-h-screen bg-purple px-5 flex flex-col justify-center items-center gap-[30px] pb-[100px]">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -23,8 +23,17 @@ const Home: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
-      <Image src={logo.src} alt="logo" width={52} height={52} />
-      <Button className="bg-yellow">
+      <Image
+        className="mb-[50px]"
+        src={logo.src}
+        alt="logo"
+        width={52}
+        height={52}
+      />
+      <Button
+        route="/game"
+        className="bg-yellow flex items-center justify-between text-left"
+      >
         <>
           play vs player
           <Image
@@ -35,7 +44,9 @@ const Home: NextPage = () => {
           />
         </>
       </Button>
-      <Button className="bg-white">game rules</Button>
+      <Button route="/rules" className="bg-white text-left">
+        game rules
+      </Button>
     </div>
   );
 };

@@ -4,22 +4,22 @@
 
 @layer components {
   .lg {
-    @apply md:text-[56px] md:leading-[71px] font-bold font-grotesk;
+    @apply text-[56px] leading-[71px] font-bold font-outfit;
   }
 
   .m {
-    @apply md:text-[24px] md:leading-[31px] font-bold font-grotesk;
+    @apply text-[24px] leading-[31px] font-bold font-outfit;
   }
 
   .s {
-    @apply md:text-[20px] md:leading-[26px] font-bold font-grotesk;
+    @apply text-[20px] leading-[26px] font-bold font-outfit;
   }
 
   .xs {
-    @apply md:text-[16px] md:leading-[21px] font-bold font-grotesk;
+    @apply text-[16px] leading-[21px] font-bold font-outfit;
   }
 
   .body {
-    @apply md:text-[16px] md:leading-[21px] font-medium font-grotesk;
+    @apply text-[16px] leading-[21px] font-medium font-outfit;
   }
 }
