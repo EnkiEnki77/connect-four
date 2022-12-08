@@ -1,10 +1,13 @@
 import Image from "next/image";
-import React from "react";
-import icon from "../public/assets/icon-check.svg";
+import React, { useState } from "react";
+import checkImage from "../public/assets/icon-check.svg";
+import checkImageHover from "../public/assets/icon-check-hover.svg";
 
 type Props = {};
 
-const rules = (props: Props) => {
+const Rules = (props: Props) => {
+  const [icon, setIcon] = useState(true);
+
   return (
     <div className="px-5 md:px-[144px] flex flex-col items-center  pt-[97px] relative bg-purple min-h-screen">
       <div
@@ -42,15 +45,27 @@ const rules = (props: Props) => {
           </ol>
         </div>
         <Image
-          className="absolute bottom-[-40px] mx-auto left-0 right-0 cursor-pointer"
-          src={icon}
-          alt="icon"
+          className="absolute bottom-[-40px] mx-auto left-0 right-0 cursor-pointer "
+          src={checkImage}
+          onMouseEnter={() => setIcon(false)}
+          alt="check image"
           width={64}
           height={64}
+          hidden={!icon}
+        />
+
+        <Image
+          className="absolute bottom-[-40px] mx-auto left-0 right-0 cursor-pointer "
+          src={checkImageHover}
+          alt="check image hovered"
+          onMouseLeave={() => setIcon(true)}
+          width={64}
+          height={64}
+          hidden={icon}
         />
       </div>
     </div>
   );
 };
 
-export default rules;
+export default Rules;
