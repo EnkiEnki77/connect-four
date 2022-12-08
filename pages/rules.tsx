@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import checkImage from "../public/assets/icon-check.svg";
 import checkImageHover from "../public/assets/icon-check-hover.svg";
+import Link from "next/link";
 
 type Props = {};
 
@@ -44,25 +45,27 @@ const Rules = (props: Props) => {
             </li>
           </ol>
         </div>
-        <Image
-          className="absolute bottom-[-40px] mx-auto left-0 right-0 cursor-pointer "
-          src={checkImage}
-          onMouseEnter={() => setIcon(false)}
-          alt="check image"
-          width={64}
-          height={64}
-          hidden={!icon}
-        />
+        <Link href="/">
+          <Image
+            className="absolute bottom-[-40px] mx-auto left-0 right-0 cursor-pointer "
+            src={checkImage}
+            onMouseEnter={() => setIcon(false)}
+            alt="check image"
+            width={64}
+            height={64}
+            hidden={!icon}
+          />
 
-        <Image
-          className="absolute bottom-[-40px] mx-auto left-0 right-0 cursor-pointer "
-          src={checkImageHover}
-          alt="check image hovered"
-          onMouseLeave={() => setIcon(true)}
-          width={64}
-          height={64}
-          hidden={icon}
-        />
+          <Image
+            className="absolute bottom-[-40px] mx-auto left-0 right-0 cursor-pointer "
+            src={checkImageHover}
+            alt="check image hovered"
+            onMouseLeave={() => setIcon(true)}
+            width={64}
+            height={64}
+            hidden={icon}
+          />
+        </Link>
       </div>
     </div>
   );

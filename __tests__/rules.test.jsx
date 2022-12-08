@@ -22,7 +22,7 @@ describe("rules functionality", () => {
     const checkImage = screen.getByAltText("check image");
     const checkImageHovered = screen.queryByAltText("check image hovered");
     expect(checkImageHovered).not.toBeVisible;
-    expect(checkImage).toBeInTheDocument();
+    expect(checkImage).toBeVisible();
 
     // // hovers over initial image
     fireEvent.mouseEnter(checkImage);
@@ -32,11 +32,11 @@ describe("rules functionality", () => {
     // checks that hoverImage replaces initial image
 
     expect(checkImage).not.toBeVisible;
-    expect(checkImageHovered).toBeInTheDocument();
+    expect(checkImageHovered).toBeVisible();
 
     fireEvent.mouseLeave(checkImageHovered);
 
     expect(checkImageHovered).not.toBeVisible;
-    expect(checkImage).toBeInTheDocument();
+    expect(checkImage).toBeVisible();
   });
 });
