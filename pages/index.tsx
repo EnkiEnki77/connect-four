@@ -24,9 +24,9 @@ const Home: NextPage = () => {
         />
       </Head>
       <div
-        className="md:bg-purple pt-[200px]  md:max-w-[480px] w-full md:h-[435px] h-full px-5 md:px-10
-      md:pb-[60px] md:pt-[70px] flex flex-col justify-center items-center gap-[30px] rounded-[40px] border-3 
-      border-black shadow-[0px_10px_0px]"
+        className="md:bg-purple  md:max-w-[480px] w-full md:h-[435px] h-full px-5 md:px-10
+      md:pb-[60px] md:pt-[70px] flex flex-col justify-center items-center gap-[30px] md:rounded-[40px] md:border-3 
+      md:border-black md:shadow-[0px_10px_0px]"
       >
         <Image
           className="mb-[50px]"

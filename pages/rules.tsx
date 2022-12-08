@@ -6,8 +6,11 @@ type Props = {};
 
 const rules = (props: Props) => {
   return (
-    <div className="px-5 flex flex-col  pt-[97px] relative bg-purple min-h-screen">
-      <div className="bg-white relative border-3 shadow-[0px_10px_0px] rounded-[40px] px-5 flex flex-col gap-[30px]">
+    <div className="px-5 md:px-[144px] flex flex-col items-center  pt-[97px] relative bg-purple min-h-screen">
+      <div
+        className="bg-white relative border-3 border-black shadow-[0px_10px_0px] rounded-[40px] px-5 md:px-[35px]
+      flex flex-col gap-[30px] w-full max-w-[335px] md:max-w-[480px]"
+      >
         <h1 className="lg uppercase text-center mt-[30px]">rules</h1>
         <div className="flex flex-col gap-4">
           <h2 className="m text-purple">OBJECTIVE</h2>
