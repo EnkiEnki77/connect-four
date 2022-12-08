@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .lg {
+    @apply md:text-[56px] md:leading-[71px] font-bold font-grotesk;
+  }
+
+  .m {
+    @apply md:text-[24px] md:leading-[31px] font-bold font-grotesk;
+  }
+
+  .s {
+    @apply md:text-[20px] md:leading-[26px] font-bold font-grotesk;
+  }
+
+  .xs {
+    @apply md:text-[16px] md:leading-[21px] font-bold font-grotesk;
+  }
+
+  .body {
+    @apply md:text-[16px] md:leading-[21px] font-medium font-grotesk;
+  }
+}
