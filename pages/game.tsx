@@ -17,7 +17,8 @@ export function timerGame(callback: () => void) {
 }
 
 const Game = (props: Props) => {
-  const [timeLeft, setTimeLeft] = useState<number | null>(15);
+  const [timeLeft, setTimeLeft] = useState<number>(15);
+  const [turn, setTurn] = useState<1 | 2>(1);
 
   const openMenu = () => {};
 
@@ -25,7 +26,10 @@ const Game = (props: Props) => {
 
   useEffect(() => {
     // exit early when we reach 0
-    if (!timeLeft) return;
+    if (!timeLeft) {
+      setTurn((prev) => (prev === 1 ? 2 : 1));
+      setTimeLeft(15);
+    }
 
     // save intervalId to clear the interval when the
     // component re-renders
@@ -55,7 +59,7 @@ const Game = (props: Props) => {
         <PlayerScore player="player 2" />
       </div>
       <Board />
-      <PlayerTurn timer={timeLeft} />
+      <PlayerTurn timer={timeLeft} turn={turn} />
       <Image
         className="absolute bottom-0 w-full max-h-[230px] lg:max-h-[200px]"
         src={Rectangle2}
