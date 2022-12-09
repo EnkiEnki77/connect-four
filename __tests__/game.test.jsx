@@ -1,15 +1,32 @@
-import { render, screen } from "@testing-library/react";
-import { userEvent } from "@testing-library/user-event/dist/types/setup";
+// __tests__/index.test.jsx
+
+import {
+  fireEvent,
+  logRoles,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
+import Home from "../pages/index";
+import "@testing-library/jest-dom";
+import userEvent from "@testing-library/user-event";
 import Game from "../pages/game";
 
-describe("Game menu", () => {
-  it("pauses game and opens menu when menu button is clicked", async () => {
-    render(<Game />);
+describe("game functionality", () => {
+  it("checks that timer starts at 15s", () => {
+    const { container } = render(<Game />);
 
-    const user = userEvent.setup();
+    const timer = screen.getByRole("heading", { name: /15s/i });
 
-    const menuButton = screen.getByRole("button", { name: /menu/i });
+    expect(timer).toBeInTheDocument();
+  });
 
-    user.click(menuButton);
+  it("checks that player 1 goes first", () => {
+    const { container } = render(<Game />);
+
+    logRoles(container);
+    const player1 = screen.getByText(/player 1's turn/i);
+
+    expect(player1).toBeInTheDocument();
   });
 });
